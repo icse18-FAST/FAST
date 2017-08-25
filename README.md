@@ -67,5 +67,24 @@ More in detail:
 - [SampleResults.md](https://github.com/icse18-FAST/FAST/blob/master/results/SampleResult.md) reports some random plots that of course have to be changed
 - [SampleResults.md](https://github.com/icse18-FAST/FAST/blob/master/results/SampleResult.md) is the same plots, just to give an idea
 
+Directory Structure
+---------------
+This is the root direcotry of the repository. The directory is structured as follows:
+
+    FAST
+     |
+     |--- input:         Input of the algorithms, consisting of fault matrices and coverage information of the subjects.
+     |
+     |--- output:        Raw output data of the experiment execution.
+     |
+     |--- prioritized:   Prioritized test suite generated from the algorithm execution.  
+     |
+     |--- py:            Implementation of the algorithms and scripts to execute the experiment      
+     |
+     |--- results:       Overview of the experiment results and related data
+     |
+     |--- tools:         Util script required to run the experiment
+  
+
 [defects4j]: https://github.com/rjust/defects4j/
 [sir]: http://sir.unl.edu/portal/index.php

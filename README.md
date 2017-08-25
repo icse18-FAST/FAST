@@ -1,6 +1,9 @@
 # FAST
 "FAST Approaches to Scalable Similarity-based Test Case Prioritization" online material.
 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+
 In this repository we provide the entirety of the material required to replicate the experiment, including: the implementation of the algorithms, the input data, and supplementary tools required to launch the experiment. In addition, the raw output experimental reaults are also provided.
 
 The subjects

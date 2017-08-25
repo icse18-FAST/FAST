@@ -64,8 +64,8 @@ Results
 In the directory [results](https://github.com/icse18-FAST/FAST/tree/master/results) the main results of the experiment are reported.
 More in detail:
 
-- [SampleResults.md](https://github.com/icse18-FAST/FAST/blob/master/results/SampleResult.md) reports some random plots that of course have to be changed
-- [SampleResults.md](https://github.com/icse18-FAST/FAST/blob/master/results/SampleResult.md) is the same plots, just to give an idea
+- [SampleResults](https://github.com/icse18-FAST/FAST/blob/master/results/SampleResult.md) reports some random plots that of course have to be changed
+- [KittenComparison](https://github.com/icse18-FAST/FAST/blob/master/results/kitten_comparison.md) we have a comparison of kitten
 
 Directory Structure
 ---------------

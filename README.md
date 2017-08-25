@@ -32,7 +32,7 @@ We propose 5 different algorithms, varying according to the approach adopted to 
  
 Experiment replication
 ---------------
-Steps required to replicate the experiment:
+In order to replicate the experiment follow these steps:
 
 ### Getting started
 

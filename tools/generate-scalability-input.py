@@ -2,7 +2,7 @@ import random
 import sys
 
 
-usage = """USAGE: python py/generate-scalability-input.py <tssize> <tcsize> <algorithm>
+usage = """USAGE: python py/generate-scalability-input.py <tssize> <tcsize>
 OPTIONS:
   <tssize>: number of test cases in the test suite.
     options: a positive integer, e.g. 1000.

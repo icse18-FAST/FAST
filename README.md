@@ -22,13 +22,13 @@ The subjects of the experimentation were taken from well known repositories for 
 
 The FAST family algorithms
 ---------------
-We propose 5 different algorithms, varying according to the approach adopted to select test cases and the number of test cases taken in input:
+We propose 5 different algorithms, varying according to the approach adopted in the selection of the next test case(s).
 
- - FAST-pw: based on Jaccard Distance
- - FAST-1: selects progressively one test case
- - FAST-log: selects test cases based on logarithmic function
- - FAST-sqrt: selects test cases based on square root function
- - FAST-all: selects the entirety of the test cases
+ - FAST-pw: selects the farthest away candidate from the so-far-prioritized test cases.
+ - FAST-one: selects one test case in the candidates
+ - FAST-log: selects square root number of test cases out of the candidates
+ - FAST-sqrt: selects logarithmic number of test cases out of the candidates
+ - FAST-all: selects all the test cases in the candidates
  
 Experiment replication
 ---------------
@@ -39,50 +39,43 @@ In order to replicate the experiment follow these steps:
 1. Clone the replication repository 
    - `git clone https://github.com/icse18-FAST/FAST/`
  
-2. Make sure that all requirements are met:
+2. Install additional python packages required by the algorithms:
    - `pip install -r requirements.txt`
 
 ### Run algorithms on specific subject
 
-3. Execute the `prioritize.py` script 
+1. Execute the `prioritize.py` script 
    - `python py/prioritize.py <dataset> <entity> <algorithm> <repetitions>`
    
-      Example: `python py/prioritize.py flex_v3 BB FAST-pw 50`
+      Example: `python py/prioritize.py flex_v3 bbox FAST-pw 50`
      
      To display all argument options simply run the script without arguments (i.e. `python py/prioritize.py`). NOTE:
       STR, I-TSD are BB prioritization only.
       ART-D, ART-F, GT, GA, GA-S are WB prioritization only.
 
-4. View output results stored in folder `output/`
+2. View output results stored in folder `output/`
 
 ### Run algorithms to evaluate scalability 
 
-3. Run the script  `generate-scalability-input.py` to generate the input for the algorithms
-   - `python py/generate-scalability-input.py <tssize> <tcsize>`
+1. Run the script  `generate-scalability-input.py` to generate the input for the algorithms
+   - `python tools/generate-scalability-input.py <tssize> <tcsize>`
 
-   Example: `python py/generate-scalability-input.py 1000 small`
+   Example: `python tools/generate-scalability-input.py 1000 small`
 
-   To display all argument options simply run the script without arguments (i.e. `python py/generate-scalability-input.py`).
+   To display all argument options simply run the script without arguments (i.e. `python tools/generate-scalability-input.py`).
 
-4. Run the script  `scalability.py` to run the algorithms
-   - `python py/scalability.py <tssize> <tcsize> <algorithm>`
-   
-   Example: `python py/scalability.py 1000 small FAST-pw`
-   
-   To display all argument options simply run the script without arguments (i.e. `python py/scalability.py`).
-
-5. Run the script  `scalability.py` to run the algorithms
+2. Run the script  `scalability.py` to run the algorithms
    - `python py/scalability.py <tssize> <tcsize> <algorithm>`
    
    Example: `python py/scalability.py 1000 small FAST-pw`
    
    To display all argument options simply run the script without arguments (i.e. `python py/scalability.py`).
    
-6. View output results stored in folder `output/`
+3. View output results stored in folder `scalability/output/`
  
 ### Plot scalability results of our experiment execution
 
- 3. Run the script  `plot-scalability-results.py` to generate the input for the algorithms.
+ 1. Run the script  `plot-scalability-results.py` to generate the input for the algorithms.
     
     - `python tools/plot-scalability-results.py <tcsize> <time> <algorithm> ... <algorithm>`
 

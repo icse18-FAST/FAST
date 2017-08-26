@@ -83,6 +83,7 @@ In order to replicate the experiment follow these steps:
 ### Plot scalability results of our experiment execution
 
  3. Run the script  `plot-scalability-results.py` to generate the input for the algorithms.
+    
     - `python tools/plot-scalability-results.py <tcsize> <time> <algorithm> ... <algorithm>`
 
    Example: `python tools/plot-scalability-results.py small prioritization FAST-pw FAST-one FAST-log`

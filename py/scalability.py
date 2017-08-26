@@ -13,7 +13,7 @@ OPTIONS:
   <tcsize>: size of the test cases.
     options: small, medium, large
   <algorithm>: algorithm used for prioritization.
-    options: FAST-pw, FAST-1, FAST-log, FAST-sqrt, FAST-all, STR, I-TSD, ART-D, ART-F, GT, GA, GA-S"""
+    options: FAST-pw, FAST-one, FAST-log, FAST-sqrt, FAST-all, STR, I-TSD, ART-D, ART-F, GT, GA, GA-S"""
 
 
 def scalability(name, ts, tc, n, r, b, selsize):

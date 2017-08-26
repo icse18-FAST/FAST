@@ -25,7 +25,7 @@ The FAST family algorithms
 We propose 5 different algorithms, varying according to the approach adopted in the selection of the next test case(s).
 
  - FAST-pw: selects the farthest away candidate from the so-far-prioritized test cases.
- - FAST-1: selects one test case in the candidates
+ - FAST-one: selects one test case in the candidates
  - FAST-log: selects square root number of test cases out of the candidates
  - FAST-sqrt: selects logarithmic number of test cases out of the candidates
  - FAST-all: selects all the test cases in the candidates

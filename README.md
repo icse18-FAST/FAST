@@ -38,26 +38,57 @@ In order to replicate the experiment follow these steps:
 
 1. Clone the replication repository 
    - `git clone https://github.com/icse18-FAST/FAST/`
-   
-2. Change directory to the script folder of the cloned repository
-   - `cd FAST/py/`
+ 
+2. Make sure that all requirements are met:
+   - `pip install -r requirements.txt`
 
 ### Run algorithms on specific subject
 
-3. Execute the `TODO.py` script 
-   - `python TODO.py`
+3. Execute the `prioritize.py` script 
+   - `python py/prioritize.py <dataset> <entity> <algorithm> <repetitions>`
+   
+      Example: `python py/prioritize.py flex_v3 BB FAST-pw 50`
+     
+     To display all argument options simply run the script without arguments (i.e. `python py/prioritize.py`). NOTE:
+      STR, I-TSD are BB prioritization only.
+      ART-D, ART-F, GT, GA, GA-S are WB prioritization only.
 
-4. View output results stored in folder `/foo/bar/foobar.txt`
+4. View output results stored in folder `output/`
 
 ### Run algorithms to evaluate scalability 
 
-3. Generate the input for the algorithms
-   - `python TODO.py`
+3. Run the script  `generate-scalability-input.py` to generate the input for the algorithms
+   - `python py/generate-scalability-input.py <tssize> <tcsize>`
 
-4. Execute the `TODO.py` script
-   - `python TODO.py`
+   Example: `python py/generate-scalability-input.py 1000 small`
+
+   To display all argument options simply run the script without arguments (i.e. `python py/generate-scalability-input.py`).
+
+4. Run the script  `scalability.py` to run the algorithms
+   - `python py/scalability.py <tssize> <tcsize> <algorithm>`
    
-5. View output results stored in folder `/foo/bar/foobar.txt`
+   Example: `python py/scalability.py 1000 small FAST-pw`
+   
+   To display all argument options simply run the script without arguments (i.e. `python py/scalability.py`).
+
+5. Run the script  `scalability.py` to run the algorithms
+   - `python py/scalability.py <tssize> <tcsize> <algorithm>`
+   
+   Example: `python py/scalability.py 1000 small FAST-pw`
+   
+   To display all argument options simply run the script without arguments (i.e. `python py/scalability.py`).
+   
+6. View output results stored in folder `output/`
+ 
+### Plot scalability results of our experiment execution
+
+ 3. Run the script  `plot-scalability-results.py` to generate the input for the algorithms.
+    - `python tools/plot-scalability-results.py <tcsize> <time> <algorithm> ... <algorithm>`
+
+   Example: `python tools/plot-scalability-results.py small prioritization FAST-pw FAST-one FAST-log`
+ 
+   To display all argument options simply run the script without arguments (i.e. `python py/scalability.py`).
+
 
 Results
 ---------------
@@ -69,7 +100,7 @@ More in detail:
 
 Directory Structure
 ---------------
-This is the root direcotry of the repository. The directory is structured as follows:
+This is the root directory of the repository. The directory is structured as follows:
 
     FAST
      |

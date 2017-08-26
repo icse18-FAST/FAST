@@ -15,7 +15,7 @@ OPTIONS:
   <entity>: BB or WB (function, branch, line) prioritization.
     options: bbox, function, branch, line
   <algorithm>: algorithm used for prioritization.
-    options: FAST-pw, FAST-1, FAST-log, FAST-sqrt, FAST-all, STR, I-TSD, ART-D, ART-F, GT, GA, GA-S
+    options: FAST-pw, FAST-one, FAST-log, FAST-sqrt, FAST-all, STR, I-TSD, ART-D, ART-F, GT, GA, GA-S
   <repetitions>: number of prioritization to compute.
     options: positive integer value, e.g. 50
 NOTE:

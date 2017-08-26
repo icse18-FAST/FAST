@@ -91,21 +91,21 @@ def get_layout():
     x_min = 0
 
     layout = dict(
-        # title=title_,
-        # xaxis=dict(title='Test Suite Size', range=[x_min, x_max],),
-        # yaxis=dict(title='Time (in seconds)', range=[0, 7300],),
-        xaxis=dict(
-            range=[x_min, x_max],
-            tickfont=dict(
-                size=22,
-            ),
-        ),
-        yaxis=dict(
-            range=[0, 7300],
-            tickfont=dict(
-                size=22,
-            ),
-        ),
+        title=target_time_map[target_time],
+        xaxis=dict(title='Test Suite Size', range=[x_min, x_max],),
+        yaxis=dict(title='Time (in seconds)', range=[0, 7300],),
+        # xaxis=dict(
+        #     range=[x_min, x_max],
+        #     # tickfont=dict(
+        #     #     size=22,
+        #     # ),
+        # ),
+        # yaxis=dict(
+        #     range=[0, 7300],
+        #     # tickfont=dict(
+        #     #     size=22,
+        #     # ),
+        # ),
         shapes=[
             {  # 1 hour dotted line
                 'type': 'line',
@@ -145,7 +145,6 @@ def get_layout():
                 ay=0,
                 font=dict(
                     color="red",
-                    size=20
                 )
             ),
             # dict(  # 2 hours annotation
@@ -160,20 +159,18 @@ def get_layout():
             #     ay=0,
             #     font=dict(
             #         color="red",
-            #         size=20
             #     )
             # )
         ],
         margin=dict(
-            l=70,
-            r=20,
-            b=40,
-            t=15,
+            l=80,
+            r=50,
+            b=50,
+            t=50,
             pad=10
         ),
-        showlegend=False,
         # legend
-        # showlegend=True,
+        showlegend=True,
         # legend=dict(orientation="h"),
     )
     return layout

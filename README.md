@@ -83,7 +83,12 @@ In order to replicate the experiment follow these steps:
  
    To display all argument options simply run the script without arguments (i.e. `python py/scalability.py`).
 
+### Clean preprocessed input files
 
+ 1. Run the script  `clean-preprocessed-input.py` to clean preprocessed input files before repeating an experiment in a clean environment.
+ 
+    - `python tools/clean-preprocessed-input.py`
+ 
 Results
 ---------------
 In the directory [results](https://github.com/icse18-FAST/FAST/tree/master/results) the main results of the experiment are reported.

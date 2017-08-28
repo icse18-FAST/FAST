@@ -2,8 +2,13 @@
 
 This repository is a companion page for an ICSE'18 submission.
 It contains all the material required for replicating our experiments, including: the implementation of the algorithms, the input data, and supplementary tools. Some aditional results, not included in the paper for the sake of space, are also provided.
+
+Experiment Results and Data
+---------------
+The results of our experiments as well as the data we used for our statistical analysis are available [here](results/README.md).
+
  
-Experiment replication
+Experiment Replication
 ---------------
 In order to replicate the experiment follow these steps:
 
@@ -67,11 +72,6 @@ In order to replicate the experiment follow these steps:
  1. Run the script `clean-preprocessed-input.py` to clean preprocessed input files for repeating the experiment in a clean environment.
  
     - `python tools/clean-preprocessed-input.py`
-
-
-Experiment Results and Data
----------------
-The results of our experiments as well as the data we used for our statistical analysis are available [here](results).
 
 
 Directory Structure

@@ -79,16 +79,17 @@ Directory Structure
 This is the root directory of the repository. The directory is structured as follows:
 
     FAST
+     .
      |
-     |--- input:         Input of the algorithms, consisting of fault matrices and coverage information of the subjects.
+     |--- input/         Input of the algorithms, i.e. fault matrix, coverage information, and BB representation of subjects.
      |
-     |--- output:        Raw output data of the experiment execution.
+     |--- output/        Raw output data of the experiments execution.
      |
-     |--- prioritized:   Prioritized test suite generated from the algorithm execution.  
+     |--- py/            Implementation of the algorithms and scripts to execute the experiments.
      |
-     |--- py:            Implementation of the algorithms and scripts to execute the experiment      
+     |--- results/       Overview of the experiment results and related data
      |
-     |--- results:       Overview of the experiment results and related data
+     |--- scalability/   Input, output, and plots for the scalability experiment.
      |
-     |--- tools:         Util script required to run the experiment
+     |--- tools/         Util scripts, e.g. clean environment, plot results, generate scalability input.
   

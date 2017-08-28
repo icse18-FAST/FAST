@@ -21,7 +21,7 @@ EXAMPLE:
 
 def parse_results_file():
     results = {}
-    filename = "scalability/results/scalability_results.tsv"
+    filename = "results/RQ3-ScalabilityResults.tsv"
     with open(filename, "r") as fin:
         count = 0
         for line in fin:

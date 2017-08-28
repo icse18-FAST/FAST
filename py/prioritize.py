@@ -11,7 +11,7 @@ import metric
 usage = """USAGE: python py/prioritize.py <dataset> <entity> <algorithm> <repetitions>
 OPTIONS:
   <dataset>: test suite to prioritize.
-    options: flex_v3, grep_v3, gzip_v1, make_v1, sed_v6, closure, lang, math, chart, time
+    options: flex_v3, grep_v3, gzip_v1, make_v1, sed_v6, closure_v0, lang_v0, math_v0, chart_v0, time_v0
   <entity>: BB or WB (function, branch, line) prioritization.
     options: bbox, function, branch, line
   <algorithm>: algorithm used for prioritization.
@@ -373,7 +373,7 @@ if __name__ == "__main__":
                 "STR", "I-TSD",
                 "ART-D", "ART-F", "GT", "GA", "GA-S"}
     prog_vs = {"flex_v3", "grep_v3", "gzip_v1", "make_v1", "sed_v6",
-               "closure", "lang", "math", "chart", "time"}
+               "closure_v0", "lang_v0", "math_v0", "chart_v0", "time_v0"}
     entities = {"bbox", "function", "branch", "line"}
 
     if prog_v not in prog_vs:
@@ -393,10 +393,7 @@ if __name__ == "__main__":
         print(usage)
         exit()
 
-    try:
-        prog, v = prog_v.split("_")  # c subjects
-    except:
-        prog, v = prog_v, "v0"  # java subjects
+    prog, v = prog_v.split("_")
 
     directory = "output/{}_{}/".format(prog, v)
     if not os.path.exists(directory):

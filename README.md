@@ -1,7 +1,7 @@
 # FAST Approaches to Scalable Similarity-based Test Case Prioritization
 
 This repository is a companion page for an ICSE'18 submission.
-It contains all the material required for replicating our experiments, including: the implementation of the algorithms, the input data, and supplementary tools required to support the experiment. Some aditional results, not included in the paper for the sake of space, are also provided.
+It contains all the material required for replicating our experiments, including: the implementation of the algorithms, the input data, and supplementary tools. Some aditional results, not included in the paper for the sake of space, are also provided.
  
 Experiment replication
 ---------------
@@ -35,18 +35,18 @@ In order to replicate the experiment follow these steps:
 1. Run the script  `generate-scalability-input.py` to generate the input testset for the algorithms
    - `python tools/generate-scalability-input.py <test_suite_size> <test_case_size>`
 
-   The argument `<test_case_size>` accepts any arbitrary integer, while `<test_case_size>` accepts three different sizes for a test case representation: small, medium, and large. *Small* for an average length of 100, *medium* for 1K, and *large* for 10K elements. In all three cases, we allow for a variance of ±25%.
+      The argument `<test_suite_size>` accepts any arbitrary integer, while `<test_case_size>` accepts three different sizes for a test case representation: *small*, *medium*, and *large*. *Small* for an average length of 100, *medium* for 1K, and *large* for 10K elements. In all three cases, we allow for a variance of ±25%.
 
-   For example, the command: `python tools/generate-scalability-input.py 1000 small` generates a test suite containing 1000 *small* test cases.
+      For example, the command: `python tools/generate-scalability-input.py 1000 small` generates a test suite containing 1000 *small* test cases.
 
-   To display all argument options simply run the script without arguments (i.e. `python tools/generate-scalability-input.py`).
+      To display all argument options simply run the script without arguments (i.e. `python tools/generate-scalability-input.py`).
 
-2. Run the script  `scalability.py` to run the algorithms
+2. Run the script `scalability.py` to measure the time required by the TCP approach to prioritize the target testset
    - `python py/scalability.py <test_suite_size> <test_case_size> <algorithm>`
    
-   For example, the command: `python py/scalability.py 1000 small FAST-pw` captures the time required by FAST-pw to prioritize a test suite containing 1000 small test cases. 
+      For example, the command: `python py/scalability.py 1000 small FAST-pw` captures the time required by FAST-pw to prioritize a test suite containing 1000 small test cases. 
    
-   To display all argument options simply run `python py/scalability.py`.
+      To display all argument options simply run `python py/scalability.py`.
    
 3. View output results stored in folder `scalability/output/`
  
@@ -56,11 +56,11 @@ In order to replicate the experiment follow these steps:
     
     - `python tools/plot-scalability-results.py <test_case_size> <time> <algorithm> ... <algorithm>`
 
-   `<time>` accepts two values, either *prioritization* or *total*, based on the way the prioritization time is measured.
+      `<time>` accepts two values, either *prioritization* or *total*, based on the way the prioritization time is measured.
    
-   Example: `python tools/plot-scalability-results.py small prioritization FAST-pw FAST-one FAST-log`
+      Example: `python tools/plot-scalability-results.py small prioritization FAST-pw FAST-one FAST-log`
  
-   To display all argument options simply run `python py/scalability.py`.
+      To display all argument options simply run `python py/scalability.py`.
 
 ### Clean preprocessed input files
 

@@ -1,7 +1,7 @@
-# FAST
-"FAST Approaches to Scalable Similarity-based Test Case Prioritization" online material.
+# FAST Approaches to Scalable Similarity-based Test Case Prioritization
 
-In this repository we provide the entirety of the material required to replicate the experiment, including: the implementation of the algorithms, the input data, and supplementary tools required to launch the experiment. In addition, the raw output experimental reaults are also provided.
+This repository is a companion page for an ICSE'18 submission.
+It contains all the material required for replicating our experiments, including: the implementation of the algorithms, the input data, and supplementary tools required to support the experiment. Some aditional results, not included in the paper for the sake of space, are also provided.
  
 Experiment replication
 ---------------
@@ -9,56 +9,62 @@ In order to replicate the experiment follow these steps:
 
 ### Getting started
 
-1. Clone the replication repository 
+1. Clone the repository 
    - `git clone https://github.com/icse18-FAST/FAST/`
  
-2. Install additional python packages required by the algorithms:
+2. Install the additional python packages required:
    - `pip install -r requirements.txt`
 
-### Run algorithms on specific subject
+### Evaluate the Effectiveness and Efficiency of different test case prioritization (TCP) algorithms
 
 1. Execute the `prioritize.py` script 
-   - `python py/prioritize.py <dataset> <entity> <algorithm> <repetitions>`
+   - `python py/prioritize.py <subject> <entity> <algorithm> <repetitions>`
    
       Example: `python py/prioritize.py flex_v3 bbox FAST-pw 50`
-     
-     To display all argument options simply run the script without arguments (i.e. `python py/prioritize.py`). NOTE:
-      STR, I-TSD are BB prioritization only.
-      ART-D, ART-F, GT, GA, GA-S are WB prioritization only.
+      
+      The possible values for `<subject>` are: flex_v3, grep_v3, gzip_v1, make_v1, sed_v6, chart_v0, closure_v0, lang_v0, math_v0, and time_v0.
+ 
+      The possible values for `<entity>` are: function, line, and branch, for white-box approaches; and bbox, for black-box TCP.
+      
+      The possible values for `<algorithm>` are: FAST-pw, FAST-one, FAST-log, FAST-sqrt, FAST-all, GT, GA, GA-S, ART-F, ART-D, STR, and I-TSD. Notice that while the FAST-* algorithms can be applied to both white-box and black-box TCP, GT, GA, GA-S, ART-F, and ART-D, are white-box only; STR and I-TSD are black-box only.
 
 2. View output results stored in folder `output/`
 
-### Run algorithms to evaluate scalability 
+### Evaluate the Scalability of different TCP approaches
 
-1. Run the script  `generate-scalability-input.py` to generate the input for the algorithms
-   - `python tools/generate-scalability-input.py <tssize> <tcsize>`
+1. Run the script  `generate-scalability-input.py` to generate the input testset for the algorithms
+   - `python tools/generate-scalability-input.py <test_suite_size> <test_case_size>`
 
-   Example: `python tools/generate-scalability-input.py 1000 small`
+   The argument `<test_case_size>` accepts any arbitrary integer, while `<test_case_size>` accepts three different sizes for a test case representation: small, medium, and large. *Small* for an average length of 100, *medium* for 1K, and *large* for 10K elements. In all three cases, we allow for a variance of ±25%.
+
+   For example, the command: `python tools/generate-scalability-input.py 1000 small` generates a test suite containing 1000 *small* test cases.
 
    To display all argument options simply run the script without arguments (i.e. `python tools/generate-scalability-input.py`).
 
 2. Run the script  `scalability.py` to run the algorithms
-   - `python py/scalability.py <tssize> <tcsize> <algorithm>`
+   - `python py/scalability.py <test_suite_size> <test_case_size> <algorithm>`
    
-   Example: `python py/scalability.py 1000 small FAST-pw`
+   For example, the command: `python py/scalability.py 1000 small FAST-pw` captures the time required by FAST-pw to prioritize a test suite containing 1000 small test cases. 
    
-   To display all argument options simply run the script without arguments (i.e. `python py/scalability.py`).
+   To display all argument options simply run `python py/scalability.py`.
    
 3. View output results stored in folder `scalability/output/`
  
-### Plot scalability results of our experiment execution
+### Plot the scalability results of our experiment execution
 
- 1. Run the script  `plot-scalability-results.py` to generate the input for the algorithms.
+ 1. Run the script `plot-scalability-results.py`:
     
-    - `python tools/plot-scalability-results.py <tcsize> <time> <algorithm> ... <algorithm>`
+    - `python tools/plot-scalability-results.py <test_case_size> <time> <algorithm> ... <algorithm>`
 
+   `<time>` accepts two values, either *prioritization* or *total*, based on the way the prioritization time is measured.
+   
    Example: `python tools/plot-scalability-results.py small prioritization FAST-pw FAST-one FAST-log`
  
-   To display all argument options simply run the script without arguments (i.e. `python py/scalability.py`).
+   To display all argument options simply run `python py/scalability.py`.
 
 ### Clean preprocessed input files
 
- 1. Run the script  `clean-preprocessed-input.py` to clean preprocessed input files before repeating an experiment in a clean environment.
+ 1. Run the script `clean-preprocessed-input.py` to clean preprocessed input files for repeating the experiment in a clean environment.
  
     - `python tools/clean-preprocessed-input.py`
 

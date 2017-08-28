@@ -68,40 +68,11 @@ In order to replicate the experiment follow these steps:
  
     - `python tools/clean-preprocessed-input.py`
 
-The subjects
+
+Experiment Results and Data
 ---------------
-The subjects of the experimentation were taken from well known repositories for software testing ([SIR][sir] and [Defects4j][defects4j]) and consisted of C and Java software artifacts respectively: 
+The results of our experiments as well as the data we used for our statistical analysis are available [here](results/README.md).
 
-|   Subject            | Language         | SLOC           | Test cases | Faults | Fault type | 
-|----------------------|------------------|----------------|------------|--------|------------|
-| Flex                 | C                | 10296          |  670       | 9      | seeded     |
-|  Grep                | C                | 10124          |  809       | 8      | seeded     |
-| Gzip                 | C                | 4594           |  214       | 7      | seeded     |
-| Sed                  | C                | 13413          |  370       | 6      | seeded     |
-| Make                 | C                | 14330          |  875       | 19     | seeded     |
-|  Closure compiler    | Java             | 90697          |  221       | 101    | real       |
-| Apache commons-lang  | Java             | 21787          |  113       | 39     | real       |
-| Apache commons-math  | Java             | 84323          |  385       | 7      | real       |
-| Jfree Chart          | Java             | 96382          |  356       | 26     | real       |
-|Joda-Time             | Java             | 27801          |  123       | 27     | real       |
-
-The FAST family algorithms
----------------
-We propose 5 different algorithms, varying according to the approach adopted in the selection of the next test case(s).
-
- - FAST-pw: selects the farthest away candidate from the so-far-prioritized test cases.
- - FAST-one: selects one test case in the candidates
- - FAST-log: selects square root number of test cases out of the candidates
- - FAST-sqrt: selects logarithmic number of test cases out of the candidates
- - FAST-all: selects all the test cases in the candidates
-
-Results
----------------
-In the directory [results](https://github.com/icse18-FAST/FAST/tree/master/results) the main results of the experiment are reported.
-More in detail:
-
-- [SampleResults](https://github.com/icse18-FAST/FAST/blob/master/results/SampleResult.md) reports some random plots that of course have to be changed
-- [KittenComparison](https://github.com/icse18-FAST/FAST/blob/master/results/kitten_comparison.md) we have a comparison of kitten
 
 Directory Structure
 ---------------
@@ -121,6 +92,3 @@ This is the root directory of the repository. The directory is structured as fol
      |
      |--- tools:         Util script required to run the experiment
   
-
-[defects4j]: https://github.com/rjust/defects4j/
-[sir]: http://sir.unl.edu/portal/index.php

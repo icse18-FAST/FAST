@@ -71,7 +71,7 @@ In order to replicate the experiment follow these steps:
 
 Experiment Results and Data
 ---------------
-The results of our experiments as well as the data we used for our statistical analysis are available [here](results/README.md).
+The results of our experiments as well as the data we used for our statistical analysis are available [here](results).
 
 
 Directory Structure

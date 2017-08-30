@@ -1,7 +1,10 @@
 # FAST Approaches to Scalable Similarity-based Test Case Prioritization
 
-This repository is a companion page for an ICSE'18 submission.
-It contains all the material required for replicating our experiments, including: the implementation of the algorithms, the input data, and supplementary tools. Some aditional results, not included in the paper for the sake of space, are also provided.
+This repository is a companion page for an ICSE'18 submission that is currently under review.
+It contains all the material required for replicating our experiments, including: the implementation of the algorithms, the input data, and supplementary tools. 
+Some aditional results, not included in the paper for the sake of space, are also provided.
+At this stage, the material is intended to be used only by ICSE'18 committees (PC, PB, and chairs). For the general public, please refrain from using the material available here until we are able to provide more information that currently would infringe the anonimity of authors.
+
 
 Experiment Results and Data
 ---------------

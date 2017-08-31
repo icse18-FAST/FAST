@@ -14,8 +14,7 @@ Here you can find the raw data used in our statistical analysis.
 
 ### RQ1: Effectiveness
 APFD for BB and WB TCP approaches:
-
-<img src="img/boxplots_apfd.png" width="50%">
+<img src="img/box_plots_all.png" width="100%">
 
 APFD results for the investigated BB and WB TCP approaches:
 <img src="img/tab_apfd.png" width="100%">

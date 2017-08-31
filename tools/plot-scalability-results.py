@@ -15,8 +15,7 @@ OPTIONS:
              STR, I-TSD,
              ART-D, ART-F, GT, GA, GA-S
 EXAMPLE:
-  To compare all the FAST approaches using large test cases and considering only prioritization time, the right usage is
-  python tools/plot-scalability-results.py large prioritization FAST-pw FAST-one FAST-log FAST-sqrt FAST-all"""
+  python tools/plot-scalability-results.py small prioritization FAST-pw FAST-one FAST-log"""
 
 
 def parse_results_file():
@@ -68,9 +67,9 @@ def get_traces_to_plot(results):
             x=ts_sizes,
             y=times,
             mode='lines+markers',
-            name=names_map[approach],
-            # marker=plot_style[approach],
-            # line=plot_line_style[approach],
+            name=approach,
+            marker=plot_style[approach],
+            line=plot_line_style[approach],
         )
         data.append(trace)
     return data
@@ -226,20 +225,49 @@ if __name__ == '__main__':
         range(100000, 1000000+1, 100000)
     )
     # display names
-    names_map = {
-        'FAST-pw': 'FAST-pw',
-        'FAST-one': 'FAST-one',
-        'FAST-all': 'FAST-all',
-        'FAST-sqrt': 'FAST-sqrt',
-        'FAST-logSq': 'FAST-logSq',
-        'FAST-log': 'FAST-log',
-        'GA': 'GA',
-        'GT': 'GT',
-        'GA-S': 'GA-S',
-        'I-TSD': 'I-TSD',
-        'ART-D': 'ART-D',
-        'ART-F': 'ART-F',
-        'STR': 'STR'
+
+    col = {
+        'blue': '#1f77b4',
+        'orange': '#ff7f0e',
+        'green': '#2ca02c',
+        'darkgreen': '#013220',
+        'red': '#d62728',
+        'purple': '#9467bd',
+        'brown': '#8c564b',
+        'pink': '#e377c2',
+        'gray': '#7f7f7f',
+        'curry': '#bcbd22',
+        'teal': '#17becf',
+        'black': '#000000'
+    }
+
+    plot_style = {
+        'I-TSD': {'color': col['darkgreen'], 'size': 8, 'symbol': 111},
+        'ART-D': {'color': col['brown'], 'size': 8, 'symbol': 110},
+        'ART-F': {'color': col['gray'], 'size': 8, 'symbol': 109},
+        'STR': {'color': col['curry'], 'size': 8, 'symbol': 108},
+        'GA': {'color': col['black'], 'size': 8, 'symbol': 106},
+        'GA-S': {'color': col['pink'], 'size': 8, 'symbol': 100},
+        'FAST-pw': {'color': col['blue'], 'size': 8, 'symbol': 102},
+        'FAST-one': {'color': col['orange'], 'size': 8, 'symbol': 103},
+        'FAST-log': {'color': col['purple'], 'size': 8, 'symbol': 105},
+        'FAST-sqrt': {'color': col['teal'], 'size': 8, 'symbol': 104},
+        'FAST-all': {'color': col['green'], 'size': 8, 'symbol': 101},
+        'GT': {'color': col['red'], 'size': 8, 'symbol': 107},
+    }
+    plot_line_style = {
+        'I-TSD': {'color': col['darkgreen'], 'width': 2, 'dash': 'dashdot'},
+        'ART-D': {'color': col['brown'], 'width': 2, 'dash': 'dash'},
+        'ART-F': {'color': col['gray'], 'width': 2, 'dash': 'dot'},
+        'STR': {'color': col['curry'], 'width': 2,},
+        'GA': {'color': col['black'], 'width': 2, 'dash': 'dash'},
+        'GA-S': {'color': col['pink'], 'width': 2, 'dash': 'dot'},
+        'FAST-pw': {'color': col['blue'], 'width': 2,},
+        'FAST-one': {'color': col['orange'], 'width': 2, 'dash': 'dot'},
+        'FAST-log': {'color': col['purple'], 'width': 2, 'dash': 'dash'},
+        'FAST-sqrt': {'color': col['teal'], 'width': 2,},
+        'FAST-all': {'color': col['green'], 'width': 2, 'dash': 'dash'},
+        'GT': {'color': col['red'], 'width': 2, 'dash': 'dot'},
     }
 
     # dict

@@ -32,4 +32,6 @@ Prioritization times (including and excluding preparation time) when considering
 ---
 ### RQ3: Scalability
 Total/Prioritization time (in seconds) required to prioritize testsets of varying dimension:
-<img src="img/plots_scalability.png" width="100%">
+<img src="img/scalability_small.png" width="100%">
+<img src="img/scalability_medium.png" width="100%">
+<img src="img/scalability_large.png" width="100%">

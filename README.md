@@ -1,9 +1,11 @@
 # FAST Approaches to Scalable Similarity-based Test Case Prioritization
 
-This repository is a companion page for an ICSE'18 submission that is currently under review.
+This repository is a companion page for the following publication:
+
+> Breno Miranda, Emilio Cruciani, Roberto Verdecchia, and Antonia Bertolino. 2018. FAST Approaches to Scalable Similarity-based Test Case Prioritization. In *Proceedings of ICSE’18: 40th International Conference on Software Engineering, Gothenburg, Sweden, May 27-June 3, 2018 (ICSE’18)*, 11 pages. DOI: 10.1145/3180155.3180210
+
 It contains all the material required for replicating our experiments, including: the implementation of the algorithms, the input data, and supplementary tools. 
-Some aditional results, not included in the paper for the sake of space, are also provided.
-At this stage, the material is intended to be used only by ICSE'18 committees (PC, PB, and chairs). For the general public, please refrain from using the material available here until we are able to provide more information that currently would infringe the anonimity of authors.
+Some additional results, not included in the paper for the sake of space, are also provided.
 
 
 Experiment Results and Data
